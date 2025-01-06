@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+
+<form action="/search" method="POST">
+    <fieldset>
+        <div style="margin-bottom: 30px;">
+          <label for="danceability" class="form-label">Danceability</label>
+          <input name="danceability" type="range" min="0" max="1" step="0.01" class="form-range" id="danceability" oninput="document.getElementById('danceabilityValue').innerText = this.value">
+          <span id="danceabilityValue">0.00</span>
+        </div>
+        <div style="margin-bottom: 30px;">
+          <label for="energy" class="form-label">Energy</label>
+          <input name="energy" type="range" min="0" max="1" step="0.01" class="form-range" id="energy" oninput="document.getElementById('EnergyValue').innerText = this.value">
+          <span id="EnergyValue">0.00</span>
+        </div>
+        <div style="margin-bottom: 30px;">
+            <label for="speechiness" class="form-label">Speechiness</label>
+            <p class="text-info">Note: 0.33 and 0.66 describe tracks that may contain both music and speech</p>
+            <input name="speechiness" type="range" min="0" max="1" step="0.01" class="form-range" id="energy" oninput="document.getElementById('SpeechinessValue').innerText = this.value">
+            <span id="SpeechinessValue">0.00</span>
+          </div>
+          <div style="margin-bottom: 30px;">
+            <label for="valence" class="form-label">Valence</label>
+            <p class="text-info">Musical positiveness</p>
+            <input name="valence" type="range" min="0" max="1" step="0.01" class="form-range" id="valence" oninput="document.getElementById('ValenceValue').innerText = this.value">
+            <span id="ValenceValue">0.00</span>
+          </div>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

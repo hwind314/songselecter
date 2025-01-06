@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2>History <small class="text-body-secondary">of song recommender only</small></h2>
+
+    <div class="accordion" id="history">
+        {% for search_id, entries in searches.items() %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ search_id }}">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ search_id }}" aria-expanded="True" aria-controls="collapse{{ search_id }}">
+                        Search {{ search_id }}
+                    </button>
+                </h2>
+                <div id="collapse{{ search_id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ search_id }}" data-bs-parent="#history">
+                    <div class="accordion-body">
+                        <ul>
+                            <table>
+                                <thead>
+                                    <tr class="table-success">
+                                        <th scope="row">Song</th>
+                                        <th>Artist</th>
+                                        <th>Album</th>
+                                        <th>Popularity</th>
+                                        <th>Genre</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for entry in entries %}
+                                        <tr>
+                                            <td>{{entry.track_name}}</td>
+                                            <td>{{entry.artists}}</td>
+                                            <td>{{entry.album_name}}</td>
+                                            <td>{{entry.popularity}}</td>
+                                            <td>{{entry.track_genre}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

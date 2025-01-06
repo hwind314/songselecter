@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block main %}
+<div>
+    <h2>Searched for:</h2>
+    <p>Danceability: {{ danceability }}</p>
+    <p>Energy: {{ energy }}</p>
+    <p>Speechiness: {{ speechiness }}</p>
+    <p>Valence: {{ valence }}</p>
+</div>
+
+<div>
+    <h2>Results</h2>
+    <table>
+        <thead>
+            <tr class="table-success">
+                <th scope="row">Song</th>
+                <th>Artist</th>
+                <th>Album</th>
+                <th>Danceability</th>
+                <th>Energy</th>
+                <th>Speechiness</th>
+                <th>Valence</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{result.track_name}}</td>
+                <td>{{result.artists}}</td>
+                <td>{{result.album_name}}</td>
+                <td>{{result.danceability}}</td>
+                <td>{{result.energy}}</td>
+                <td>{{result.speechiness}}</td>
+                <td>{{result.valence}}</td>
+                <td><a href="https://open.spotify.com/track/{{ result.track_id }}" target="_blank">Listen here!</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

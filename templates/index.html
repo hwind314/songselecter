@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+<form action="/searcher" method="get">
+    <button type="submit" class="btn btn-info">Start Search</button>
+</form>
+
+<h3>Number of Searches:</h3>
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Feeling Lucky
+      <span class="badge bg-primary rounded-pill">{{ luck }}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Song Recommended
+      <span class="badge bg-primary rounded-pill">{{ search }}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Specific Searches
+      <span class="badge bg-primary rounded-pill">{{ find }}</span>
+    </li>
+  </ul>
+{% endblock %}

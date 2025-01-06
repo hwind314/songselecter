@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Home
+{% endblock %}
+
+{% block main %}
+<div style="display: flex; gap: 10px; justify-content: center">
+    <form action="/lucky" method="get">
+        <button type="submit" class="btn btn-secondary">I'm feeling lucky!</button>
+    </form>
+    <form action="/search" method="get">
+        <button type="submit" class="btn btn-info">Help me pick a song</button>
+    </form>
+    <form action="/find" method="get">
+        <button type="submit" class="btn btn-success">I know what I want</button>
+    </form>
+</div>
+
+{% endblock %}

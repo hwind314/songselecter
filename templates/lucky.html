@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Feeling Lucky
+{% endblock %}
+
+{% block main %}
+
+<h2>Results</h2>
+<table>
+    <thead>
+        <tr class="table-success">
+            <th scope="row">Song</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Popularity</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{luck[0].track_name}}</td>
+            <td>{{luck[0].artists}}</td>
+            <td>{{luck[0].album_name}}</td>
+            <td>{{luck[0].popularity}}</td>
+            <td>{{luck[0].track_genre}}</td>
+            <td><a href="https://open.spotify.com/track/{{ luck[0].track_id }}" target="_blank">Listen here!</a></td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Find
+{% endblock %}
+
+{% block main %}
+<form action="/find" method="POST">
+    <div>
+        <label for="select" class="form-label mt-4">Select one</label>
+        <select class="form-select" id="select" name="select">
+          <option value="track_name" id="song">Song</option>
+          <option value="artists" id="artist">Artist</option>
+          <option value="album_name" id="track_album">Album</option>
+        </select>
+      </div>
+    <div>
+        <label for="answer" class="form-label mt-4">Search</label>
+        <textarea class="form-control" id="answer" name="answer" rows="3"></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
