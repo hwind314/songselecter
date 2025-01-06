@@ -19,49 +19,8 @@ data.db
     history: results generated from search.html
     search: counter for the different searches
 
-'''
-    CREATE TABLE IF NOT EXISTS "songs" (
-    "Unnamed: 0" INTEGER,
-    "track_id" TEXT,
-    "artists" TEXT,
-    "album_name" TEXT,
-    "track_name" TEXT,
-    "popularity" INTEGER,
-    "duration_ms" INTEGER,
-    "explicit" INTEGER,
-    "danceability" REAL,
-    "energy" REAL,
-    "key" INTEGER,
-    "loudness" REAL,
-    "mode" INTEGER,
-    "speechiness" REAL,
-    "acousticness" REAL,
-    "instrumentalness" REAL,
-    "liveness" REAL,
-    "valence" REAL,
-    "tempo" REAL,
-    "time_signature" INTEGER,
-    "track_genre" TEXT
-    );
-    CREATE TABLE users(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT NOT NULL,
-    password TEXT NOT NULL
-    );
-    CREATE TABLE sqlite_sequence(name,seq);
-    CREATE TABLE history (
-        id INTEGER,
-        track_id TEXT,
-        search_id INTEGER,
-        FOREIGN KEY (id) REFERENCES users(id)
-    );
-    CREATE TABLE search (
-    id INTEGER,
-    luck INTEGER
-    , find INTEGER,
-    search INTEGER,
-    FOREIGN KEY (id) REFERENCES users(id));
-'''
+Song Searcher.mov
+    short video showing website functions
 
 app.py
     file where all functions needed for website is stored
